@@ -45,6 +45,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: pixel(50)
   },
+  terms: {
+    fontSize: pixel(15),
+    fontWeight: "700",
+    lineHeight: pixel(54),
+    color: "rgba(255, 255, 255, 1)",
+    textAlign: "center",
+  }
 });
 
 export default styles;

@@ -1,4 +1,4 @@
-import { Image, ImageBackground, Text, View } from "react-native";
+import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "./welcomeScreen.style";
@@ -8,7 +8,7 @@ import { apikey } from "../../apikey";
 
 // Welcome screen component - first screen users see when opening the app
 const WelcomeScreen: React.FC = () => {
-  const { t, BonkbotIcon, onPressToStart, apiKey } = welcomeScreenHook();
+  const { t, BonkbotIcon, onPressToStart, apiKey, openPrivacyPolicy } = welcomeScreenHook();
   
   // Check API key and render API key component if needed
   const apiKeyComponent = apikey({key: apiKey?.url});
@@ -45,6 +45,9 @@ const WelcomeScreen: React.FC = () => {
         {/* Get started button */}
         <MainButton title={t('getStarted')} onPress={onPressToStart} />
       </View>
+      <TouchableOpacity onPress={openPrivacyPolicy}>
+        <Text style={styles.terms}>Privacy Policy and Terms of Service</Text>
+      </TouchableOpacity>
     </View>
   );
 };

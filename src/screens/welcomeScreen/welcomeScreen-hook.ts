@@ -5,6 +5,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { ConnectAI } from "../../store/slices/aiSlice";
 import { NavigationParamList } from "../../navigation/mainNavigation";
 import { useNavigation } from "@react-navigation/native";
+import { Linking } from "react-native";
 
 // Navigation props type
 type Props = NativeStackScreenProps<NavigationParamList, "CHATSCREEN">;
@@ -29,10 +30,15 @@ export default () => {
     dispatch(ConnectAI());
   }, [dispatch]);
 
+  const openPrivacyPolicy = () => {
+    Linking.openURL('https://bonkbot.cloud');
+  };
+
   return {
     t,
     BonkbotIcon,
     onPressToStart,
     apiKey,
+    openPrivacyPolicy,
   };
 };

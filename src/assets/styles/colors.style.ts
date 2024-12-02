@@ -1,0 +1,1 @@
+export const statusBarBlue = "#144F3D";

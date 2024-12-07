@@ -4,15 +4,10 @@ import { LinearGradient } from "expo-linear-gradient";
 import styles from "./welcomeScreen.style";
 import welcomeScreenHook from "./welcomeScreen-hook";
 import MainButton from "../../components/mainButton/mainButton";
-import { apikey } from "../../apikey";
 
 // Welcome screen component - first screen users see when opening the app
 const WelcomeScreen: React.FC = () => {
-  const { t, BonkbotIcon, onPressToStart, apiKey, openPrivacyPolicy } = welcomeScreenHook();
-  
-  // Check API key and render API key component if needed
-  const apiKeyComponent = apikey({key: apiKey?.url});
-  if (apiKeyComponent) return apiKeyComponent;
+  const { t, BonkbotIcon, onPressToStart, openPrivacyPolicy } = welcomeScreenHook();
 
   return (
     <View style={styles.container}>
